@@ -1,0 +1,30 @@
+﻿@page "{Id?}"
+@model IndexModel
+@{
+}
+
+<environment include="Development">
+    <div class="alert-warning text-danger m-3">You are in a testing environment</div>
+</environment>
+
+<h3>Tables of Users</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Detail</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var user in Model.Users)
+        {
+            <partial name="_UserDisplay" model="user"/>
+        }
+    </tbody>
+</table>
+<div class="d-flex justify-content-end">
+    <a asp-page="/Users/Create" class="btn btn-primary">Create</a>
+</div>

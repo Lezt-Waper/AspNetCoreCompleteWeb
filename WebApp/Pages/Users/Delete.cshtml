@@ -1,0 +1,19 @@
+﻿@page
+@model WebApp.Pages.Users.DeleteModel
+@{
+}
+
+<h2>Do you delete this User</h2>
+<form method="post">
+    <input type="hidden" asp-for="User.Id">
+    <div class="mb-3">
+        <label asp-for="User.FirstName"></label>
+        <input asp-for="User.FirstName" class="form-control" placeholder="@Model.User.FirstName" disabled>
+    </div>
+    <div class="mb-3">
+        <label asp-for="User.LastName"></label>
+        <input asp-for="User.LastName" class="form-control" placeholder="@Model.User.LastName" disabled>
+    </div>
+    <a href="/Users/Index" class="btn btn-success">Dismiss</a>
+    <button type="submit" class="btn btn-danger">Delete</button>
+</form>

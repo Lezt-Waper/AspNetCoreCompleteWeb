@@ -1,0 +1,12 @@
+﻿@model WebApp.Models.User
+<tr>
+    <td>@Model.Id</td>
+    <td>@Model.FirstName</td>
+    <td>@Model.LastName</td>
+    <td>
+        <a asp-page="/Users/Detail" asp-route-Id="@Model.Id" class="btn btn-info">Detail</a>
+    </td>
+    <td>
+        <a asp-page="/Users/Delete" asp-route-Id="@Model.Id" class="btn btn-danger">Delete</a>
+    </td>
+</tr>
